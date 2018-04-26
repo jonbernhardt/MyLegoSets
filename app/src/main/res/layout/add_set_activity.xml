@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvAddTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setToAdd"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Set Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSetNum" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etSetNumber" />
+
+    <Button
+        android:id="@+id/btnGetSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/searchBtn" />
+
+    <LinearLayout
+        android:id="@+id/detailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSetNumDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set Number" />
+
+        <TextView
+            android:id="@+id/tvSetNumReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvSetName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="Set Name" />
+
+        <TextView
+            android:id="@+id/tvSetNameReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="Set Theme" />
+
+        <TextView
+            android:id="@+id/tvThemeReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvSetNumPieces"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="Number of pieces" />
+
+        <TextView
+            android:id="@+id/tvSetNumPiecesReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btnAddSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/btnAdd" />
+
+    </LinearLayout>
+</LinearLayout>

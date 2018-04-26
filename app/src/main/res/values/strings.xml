@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyLegoSets</string>
+    <string name="inventoryTitle">My Lego Sets</string>
+    <string name="btnAdd">Add Set</string>
+    <string name="btnDetail">View Set Details</string>
+    <string name="setToAdd">Enter a set number to add</string>
+    <string name="searchBtn">Get details</string>
+</resources>
