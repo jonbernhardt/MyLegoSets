@@ -23,11 +23,12 @@
         android:id="@+id/tvSetNum" />
 
     <EditText
+        android:id="@+id/etSetNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/etSetNumber" />
+        android:hint="ex. 75201"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnGetSet"
@@ -39,8 +40,15 @@
         android:id="@+id/detailsLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="15dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/ivSetImg"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/tvSetNumDetail"

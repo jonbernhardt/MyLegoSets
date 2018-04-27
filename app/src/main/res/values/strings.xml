@@ -5,4 +5,5 @@
     <string name="btnDetail">View Set Details</string>
     <string name="setToAdd">Enter a set number to add</string>
     <string name="searchBtn">Get details</string>
+    <string name="miniFigsNum">Number of MiniFigs</string>
 </resources>

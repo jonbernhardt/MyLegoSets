@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivSetImg"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_margin="7dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvSetNumDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Number" />
+
+    <TextView
+        android:id="@+id/tvSetNumReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvSetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="Set Name" />
+
+    <TextView
+        android:id="@+id/tvSetNameReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="Set Theme" />
+
+    <TextView
+        android:id="@+id/tvThemeReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvSetNumPieces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="Number of pieces" />
+
+    <TextView
+        android:id="@+id/tvSetNumPiecesReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvSetNumMiniFigs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="@string/miniFigsNum" />
+
+    <TextView
+        android:id="@+id/tvSetNumMiniFigsReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="7dp"
+        android:text="" />
+
+</LinearLayout>

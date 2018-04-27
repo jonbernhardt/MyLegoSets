@@ -20,16 +20,18 @@
         />
 
     <ListView
+        android:id="@+id/lvSets"
         android:layout_width="match_parent"
         android:layout_height="410dp"
-        android:id="@+id/lvSets"
         android:choiceMode="singleChoice"
-        android:clickable="false" />
+        android:clickable="false"
+        android:paddingTop="7dp" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="7dp">
 
         <Button
             android:id="@+id/btnAddSet"
@@ -39,11 +41,11 @@
             android:text="@string/btnAdd" />
 
         <Button
-            android:text="Delete"
+            android:id="@+id/buttonDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonDelete"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Delete" />
 
         <Button
             android:id="@+id/btnSetDetail"
