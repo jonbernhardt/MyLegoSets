@@ -1,8 +1,6 @@
 package edu.css.mylegosets;
 
-/**
- * Created by M069642 on 4/25/2018.
- */
+
 
 public class LegoSet {
 
