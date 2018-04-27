@@ -10,16 +10,20 @@ public class LegoSet {
     private String setName;
     private String theme;
     private String numPieces;
+    private String imgUrl;
+    private String numMiniFigs;
 
     public LegoSet () {
 
     }
 
-    public LegoSet (String setNumber, String setName, String theme, String numPieces) {
+    public LegoSet (String setNumber, String setName, String theme, String numPieces, String imgUrl, String numMiniFigs) {
         this.setNumber = setNumber;
         this.setName = setName;
         this.theme = theme;
         this.numPieces = numPieces;
+        this.imgUrl = imgUrl;
+        this.numMiniFigs = numMiniFigs;
     }
 
     public String getSetNumber() {
@@ -54,6 +58,22 @@ public class LegoSet {
         this.numPieces = numPieces;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getNumMiniFigs() {
+        return numMiniFigs;
+    }
+
+    public void setNumMiniFigs(String numMiniFigs) {
+        this.numMiniFigs = numMiniFigs;
+    }
+
     @Override
     public String toString() {
         return "LegoSet{" +
@@ -61,6 +81,8 @@ public class LegoSet {
                 ", setName='" + setName + '\'' +
                 ", theme='" + theme + '\'' +
                 ", numPieces='" + numPieces + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", numMiniFigs='" + numMiniFigs + '\'' +
                 '}';
     }
 }
