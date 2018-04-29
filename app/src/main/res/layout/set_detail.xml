@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="7dp"
@@ -11,7 +12,8 @@
         android:layout_height="72dp"
         android:layout_gravity="center"
         android:layout_margin="7dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/tvSetNumDetail"
@@ -68,6 +70,8 @@
         android:paddingTop="7dp"
         android:text="" />
 
+
+
     <TextView
         android:id="@+id/tvSetNumMiniFigs"
         android:layout_width="match_parent"
@@ -81,5 +85,13 @@
         android:layout_height="wrap_content"
         android:paddingTop="7dp"
         android:text="" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="17dp"
+        android:text="Back" />
 
 </LinearLayout>

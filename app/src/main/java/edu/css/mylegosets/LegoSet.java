@@ -1,8 +1,9 @@
 package edu.css.mylegosets;
 
 
+import java.io.Serializable;
 
-public class LegoSet {
+public class LegoSet implements Serializable {
 
     private String setNumber;
     private String setName;
