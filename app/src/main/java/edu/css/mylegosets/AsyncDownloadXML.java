@@ -55,43 +55,39 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setNumber = xpp.getText();
                         //Log.v("Gibbons","Wind MPH" +windStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
                     if (tag.equals("name")){
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setName = xpp.getText();
                         //Log.v("Gibbons","Temp" + tempStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
                     if (tag.equals("theme")){
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setTheme = xpp.getText();
                         //Log.v("Gibbons","Vis" + visStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
                     if (tag.equals("pieces")){
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setPieces = xpp.getText();
                         //Log.v("Gibbons","Wind MPH" +windStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
+                    }
+                    if (tag.equals("minifigs")){
+                        eventType = xpp.next(); 		// go to next element which should be the text
+                        setMiniFigs = xpp.getText();
+                        //Log.v("Gibbons","Vis" + visStr);
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
                     if (tag.equals("thumbnailURL")){
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setImg = xpp.getText();
                         //Log.v("Gibbons","Temp" + tempStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
+                        publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
-                    if (tag.equals("minifigs")){
-                        eventType = xpp.next(); 		// go to next element which should be the text
-                        if (xpp.getText() == null) {
-                            setMiniFigs = "0";
-                        } else {
-                            setMiniFigs = xpp.getText();
-                        }
 
-                        //Log.v("Gibbons","Vis" + visStr);
-                        publishProgress(setNumber,setName, setTheme, setPieces, setImg, setMiniFigs);	// Update the display
-                    }
                 }
                 eventType = xpp.next();
             }
@@ -120,8 +116,8 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
         actLegoSet.setSetName(update[1]);
         actLegoSet.setSetTheme(update[2]);
         actLegoSet.setSetPieces(update[3]);
-        actLegoSet.setSetImg(update[4]);
-        actLegoSet.setSetFigs(update[5]);
+        actLegoSet.setSetFigs(update[4]);
+        actLegoSet.setSetImg(update[5]);
     }
 
     @Override

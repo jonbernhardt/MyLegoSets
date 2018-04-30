@@ -94,14 +94,15 @@ public class AddLegoSet extends AppCompatActivity {
         tvSetPieces.setText(newPieces);
     }
 
+    public void setSetFigs(String newFigs) {
+            tvSetFigs.setText(newFigs);
+    }
+
     public void setSetImg(String newImg) {
         imgURL = newImg;
         Picasso.get().load(imgURL).into(ivSetImg);
     }
 
-    public void setSetFigs(String newFigs) {
-        tvSetFigs.setText(newFigs);
-    }
 
     public void setStatus(String newStatus) {
         Toast toast=Toast.makeText(getApplicationContext(), newStatus, Toast.LENGTH_LONG );

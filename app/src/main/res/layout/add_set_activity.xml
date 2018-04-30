@@ -106,6 +106,20 @@
             android:paddingTop="7dp"
             android:text="" />
 
+        <TextView
+            android:id="@+id/tvSetNumMiniFigs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="Number of MiniFigs" />
+
+        <TextView
+            android:id="@+id/tvSetNumMiniFigsReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:text="" />
+
         <Button
             android:id="@+id/btnAddSet"
             android:layout_width="match_parent"
