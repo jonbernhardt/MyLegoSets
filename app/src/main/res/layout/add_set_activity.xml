@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="15dp"
@@ -30,12 +31,26 @@
         android:hint="ex. 75201"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btnGetSet"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnSearchClick"
-        android:text="@string/searchBtn" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnGetSet"
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnSearchClick"
+            android:text="@string/searchBtn" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btnBack" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/detailsLayout"
@@ -55,21 +70,24 @@
             android:id="@+id/tvSetNumDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Set Number" />
+            android:background="@color/colorPrimary"
+            android:text="Set Number"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvSetNumReturn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="7dp"
-            android:text="" />
+            android:paddingTop="7dp" />
 
         <TextView
             android:id="@+id/tvSetName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:paddingTop="7dp"
-            android:text="Set Name" />
+            android:text="Set Name"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvSetNameReturn"
@@ -82,8 +100,10 @@
             android:id="@+id/tvTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:paddingTop="7dp"
-            android:text="Set Theme" />
+            android:text="Set Theme"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvThemeReturn"
@@ -96,8 +116,10 @@
             android:id="@+id/tvSetNumPieces"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:paddingTop="7dp"
-            android:text="Number of pieces" />
+            android:text="Number of pieces"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvSetNumPiecesReturn"
@@ -110,8 +132,10 @@
             android:id="@+id/tvSetNumMiniFigs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:paddingTop="7dp"
-            android:text="Number of MiniFigs" />
+            android:text="Number of MiniFigs"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/tvSetNumMiniFigsReturn"

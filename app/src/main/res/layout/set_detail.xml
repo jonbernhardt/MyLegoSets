@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="7dp"
@@ -19,72 +20,99 @@
         android:id="@+id/tvSetNumDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Set Number" />
+        android:background="@color/colorPrimary"
+        android:text="Set Number"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/tvSetNumReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
         android:paddingTop="7dp"
-        android:text="" />
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:id="@+id/tvSetName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
         android:paddingTop="7dp"
-        android:text="Set Name" />
+        android:text="Set Name"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/tvSetNameReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
         android:paddingTop="7dp"
-        android:text="" />
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:id="@+id/tvTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:paddingTop="7dp"
-        android:text="Set Theme" />
+        android:text="Set Theme"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@color/colorPrimary"
+        tools:backgroundTint="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/tvThemeReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
         android:paddingTop="7dp"
-        android:text="" />
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
         android:id="@+id/tvSetNumPieces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:paddingTop="7dp"
-        android:text="Number of pieces" />
+        android:text="Number of pieces"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/tvSetNumPiecesReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
         android:paddingTop="7dp"
-        android:text="" />
-
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
 
     <TextView
         android:id="@+id/tvSetNumMiniFigs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="@color/colorPrimary"
         android:paddingTop="7dp"
-        android:text="@string/miniFigsNum" />
+        android:text="@string/miniFigsNum"
+        android:textColor="@android:color/white"
+        android:textColorHighlight="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/tvSetNumMiniFigsReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="7dp"
         android:paddingTop="7dp"
-        android:text="" />
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <Button
         android:id="@+id/btnBack"

@@ -23,7 +23,7 @@ import java.net.URL;
 
 public class AddLegoSet extends AppCompatActivity {
 
-    Button btnSave, btnGetSet;
+    Button btnSave, btnGetSet, buttonBack;
     EditText etQuery;
     TextView tvSetNum, tvSetName, tvSetPieces, tvSetTheme, tvSetFigs;
     ImageView ivSetImg;
@@ -37,7 +37,7 @@ public class AddLegoSet extends AppCompatActivity {
         setContentView(R.layout.add_set_activity);
 
         // link each editText variable to the xml layout
-        tvSetNum = (TextView) findViewById(R.id.tvSetNumDetail);
+        tvSetNum = (TextView) findViewById(R.id.tvSetNumReturn);
         tvSetName = (TextView) findViewById(R.id.tvSetNameReturn);
         tvSetTheme = (TextView) findViewById(R.id.tvThemeReturn);
         tvSetPieces = (TextView) findViewById(R.id.tvSetNumPiecesReturn);
@@ -67,6 +67,16 @@ public class AddLegoSet extends AppCompatActivity {
             }
         });
 
+        // set up the button listener
+        buttonBack = (Button) findViewById(R.id.btnBack);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent mainActIntent = new Intent(view.getContext(), MainActivity.class);
+                finish();
+                startActivity(mainActIntent);
+            }
+        });
+
     }
 
     // add find button listener and code
@@ -74,7 +84,7 @@ public class AddLegoSet extends AppCompatActivity {
     //public void btnClick (View v) throws XmlPullParserException, ClientProtocolException, URISyntaxException, IOException {
     public void btnSearchClick (View v) throws XmlPullParserException, URISyntaxException, IOException {
 
-        //new AsyncDownloadXML().execute(weatherStrURL);
+
         new AsyncDownloadXML().execute(this);
 
 
