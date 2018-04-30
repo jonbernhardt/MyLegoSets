@@ -43,11 +43,11 @@ public class LegoSetAdapter extends ArrayAdapter<LegoSet> {
         TextView tvSetPieces=(TextView)view.findViewById(R.id.tvSetNumPieces);
         TextView tvSetMiniFigs=(TextView)view.findViewById(R.id.tvSetNumMiniFigs);
         //ivSetImg.setImageURI(ivSetImg);
-        tvSetName.setText(LegoSet.getSetName());
-        tvSetNum.setText(LegoSet.getSetNumber());
-        tvSetTheme.setText(LegoSet.getTheme());
-        tvSetPieces.setText(LegoSet.getNumPieces());
-        tvSetMiniFigs.setText(LegoSet.getNumMiniFigs());
+        tvSetName.setText(legoSet.getSetName());
+        tvSetNum.setText(legoSet.getSetNumber());
+        tvSetTheme.setText(legoSet.getTheme());
+        tvSetPieces.setText(legoSet.getNumPieces());
+        tvSetMiniFigs.setText(legoSet.getNumMiniFigs());
 
 
         return(view);

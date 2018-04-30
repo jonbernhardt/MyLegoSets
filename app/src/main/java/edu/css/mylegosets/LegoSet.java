@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 public class LegoSet implements Serializable {
 
+    private String key;
     private String setNumber;
     private String setName;
     private String theme;
@@ -16,6 +17,17 @@ public class LegoSet implements Serializable {
 
     }
 
+    public LegoSet (String key, String setNumber, String setName, String theme, String numPieces, String imgUrl, String numMiniFigs) {
+        this.key = key;
+        this.setNumber = setNumber;
+        this.setName = setName;
+        this.theme = theme;
+        this.numPieces = numPieces;
+        this.imgUrl = imgUrl;
+        this.numMiniFigs = numMiniFigs;
+    }
+
+
     public LegoSet (String setNumber, String setName, String theme, String numPieces, String imgUrl, String numMiniFigs) {
         this.setNumber = setNumber;
         this.setName = setName;
@@ -23,6 +35,14 @@ public class LegoSet implements Serializable {
         this.numPieces = numPieces;
         this.imgUrl = imgUrl;
         this.numMiniFigs = numMiniFigs;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getSetNumber() {

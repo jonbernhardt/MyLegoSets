@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // Start up the add set activity with an intent
-                Intent detailActIntent = new Intent(view.getContext(), addLegoSet.class);
+                Intent detailActIntent = new Intent(view.getContext(), AddLegoSet.class);
                 finish();
                 startActivity(detailActIntent);
             }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupDeleteButton() {
         // Set up the button to display details on one fish using a seperate activity
-        btnDelete = (Button) findViewById(R.id.buttonDelete);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.d("MAIN", "onClick for Delete");
