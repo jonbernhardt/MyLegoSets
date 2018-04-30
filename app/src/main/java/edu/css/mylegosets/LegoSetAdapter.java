@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class LegoSetAdapter extends ArrayAdapter<LegoSet> {
@@ -42,7 +44,7 @@ public class LegoSetAdapter extends ArrayAdapter<LegoSet> {
         TextView tvSetTheme=(TextView)view.findViewById(R.id.tvTheme);
         TextView tvSetPieces=(TextView)view.findViewById(R.id.tvSetNumPieces);
         TextView tvSetMiniFigs=(TextView)view.findViewById(R.id.tvSetNumMiniFigs);
-        //ivSetImg.setImageURI(ivSetImg);
+        Picasso.get().load(legoSet.getImgUrl()).into(ivSetImg);
         tvSetName.setText(legoSet.getSetName());
         tvSetNum.setText(legoSet.getSetNumber());
         tvSetTheme.setText(legoSet.getTheme());
