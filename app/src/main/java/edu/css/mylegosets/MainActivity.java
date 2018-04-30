@@ -10,16 +10,24 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btnAdd, btnSetDetail, btnDelete;          // two button widgets
     ListView listViewSets;                                  // listview to display all the fish in the database
-    ArrayAdapter<LegoSet> setAdapter;
+    ArrayAdapter<LegoSet> legoSetAdapter;
     List<LegoSet> setList;
     int positionSelected;
     LegoFirebaseData legoDataSource;
+    DatabaseReference mySetDbRef;
+    LegoSet setSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupFirebaseDataChange() {
-        // ToDo - Add code here to update the listview with data from Firebase
+        legoDataSource = new LegoFirebaseData();
+        mySetDbRef = legoDataSource.open();
+        mySetDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                setList = legoDataSource.getAllSets(dataSnapshot);
+                legoSetAdapter = new LegoSetAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, setList);
+                listViewSets.setAdapter(legoSetAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void setupListView() {
@@ -83,8 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MAIN", "onClick for Delete");
                 Log.d("MAIN", "Delete at position " + positionSelected);
                 legoDataSource.deleteSet(setList.get(positionSelected));
-                setAdapter.remove( setList.get(positionSelected) );
-                setAdapter.notifyDataSetChanged();
+                legoSetAdapter.remove( setList.get(positionSelected) );
+                legoSetAdapter.notifyDataSetChanged();
             }
         });
     }
