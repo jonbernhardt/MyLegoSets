@@ -75,7 +75,7 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
                         setMiniFigs = xpp.getText();
                         publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
-                    if (tag.equals("thumbnailURL")){
+                    if (tag.equals("imageURL")){
                         eventType = xpp.next(); 		// go to next element which should be the text
                         setImg = xpp.getText();
                         publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display

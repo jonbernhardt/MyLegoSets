@@ -61,7 +61,7 @@
 
         <ImageView
             android:id="@+id/ivSetImg"
-            android:layout_width="96dp"
+            android:layout_width="200dp"
             android:layout_height="72dp"
             android:layout_gravity="center"
             android:layout_weight="1" />
