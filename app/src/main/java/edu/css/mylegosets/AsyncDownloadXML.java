@@ -1,5 +1,13 @@
 package edu.css.mylegosets;
 
+/**
+ * This is the XML parser Async task. This calls an api based on the input from the AddLegoSet code
+ * Then set the display up with the elements found in the XML returned
+ *
+ * @author Jon Bernhardt
+ *
+ */
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -15,10 +23,12 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
 
     AddLegoSet actLegoSet;
 
+    /**
+     * sets up async task to pull the data from the api
+     */
     @Override
     protected String doInBackground(AddLegoSet... new_actLegoSet) {
         try {
-            Log.v("Lego","AsyncDownloadXML doInBackground");
 
             // Save a pointer to the main Lego Set Activity which is passed in as a parameter
             actLegoSet = new_actLegoSet[0];
@@ -28,6 +38,7 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
 
+            // API string with user input
             String queryString = "https://brickset.com/api/v2.asmx/getSets?apiKey=VQCb-PEVh-NM7r&userHash=&query=" + actLegoSet.etQuery.getText().toString() + "&theme=&subtheme=&setNumber=&year=&owned=&wanted=&orderBy=&pageSize=&pageNumber=&userName=";
             URL queryURL =  new URL(queryString);
 
@@ -35,19 +46,18 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
             xpp.setInput(stream, null);
             int eventType = xpp.getEventType();
 
-            String setName = "Updaing...";			// Temperature Update String
-            String setNumber = "Updaing...";
-            String setTheme = "Updaing...";
-            String setImg = "Updaing...";
-            String setPieces= "Updaing...";// Wind Update String
-            String setMiniFigs =  "0";        // Visibility Update String
+            String setName = "Updaing...";			// Set name Update String
+            String setNumber = "Updaing...";        // Set number Update String
+            String setTheme = "Updaing...";         // Set theme Update String
+            String setImg = "Updaing...";           // Set image Update String
+            String setPieces= "Updaing...";         // Set pieces Update String
+            String setMiniFigs =  "0";              // Set MiniFigs Update String
             publishProgress(setNumber, setName, setTheme, setPieces, setImg, setMiniFigs);
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
                 // look for a start tag
                 if(eventType == XmlPullParser.START_TAG) {
-                    //Log.v("Gibbons","Start tag found");
                     // get the tag name and process it
                     String tag = xpp.getName();
                     if (tag.equals("number")){
@@ -80,7 +90,6 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
                         setImg = xpp.getText();
                         publishProgress(setNumber,setName, setTheme, setPieces, setMiniFigs, setImg);	// Update the display
                     }
-
                 }
                 eventType = xpp.next();
             }
@@ -96,6 +105,9 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
 
     }
 
+    /**
+     * Updates the set details to be displayed in the add lego activity
+     */
     @Override
     protected void onProgressUpdate(String... update) {
         actLegoSet.setSetNumber(update[0]);
@@ -106,6 +118,9 @@ public class AsyncDownloadXML extends AsyncTask<AddLegoSet, String, String> {
         actLegoSet.setSetImg(update[5]);
     }
 
+    /**
+     * Returns the results from the query
+     */
     @Override
     protected void onPostExecute(String result) {
         actLegoSet.setStatus(result);

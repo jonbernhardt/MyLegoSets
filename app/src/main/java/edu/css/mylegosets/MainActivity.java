@@ -1,5 +1,10 @@
 package edu.css.mylegosets;
-
+/**
+ * This is the main activity for the MyLegoSets app
+ *
+ * @author Jon Bernhardt
+ *
+ */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,26 +26,28 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button btnAdd, btnSetDetail, btnDelete;          // two button widgets
-    ListView listViewSets;                                  // listview to display all the fish in the database
-    ArrayAdapter<LegoSet> legoSetAdapter;
-    List<LegoSet> setList;
-    int positionSelected;
-    LegoFirebaseData legoDataSource;
-    DatabaseReference mySetDbRef;
-    LegoSet setSelected;
+    ListView listViewSets;                                  // listview to display all the sets in the database
+    ArrayAdapter<LegoSet> legoSetAdapter;       //array adapter for sets
+    List<LegoSet> setList;                      //list of sets
+    int positionSelected;                       //list position selected
+    LegoFirebaseData legoDataSource;            //connection to database
+    DatabaseReference mySetDbRef;               //database reference for listener
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupFirebaseDataChange();
-        setupListView();
-        setupAddButton();
-        setupDetailButton();
-        setupDeleteButton();
+        setupFirebaseDataChange();  //Set up Data change listener
+        setupListView();            //Set up list view of sets
+        setupAddButton();           //Add button
+        setupDetailButton();        //Set detail button
+        setupDeleteButton();        //Delete set button
     }
 
+    /**
+     * This sets up the listener for data change and pulls the data into the set list
+     */
     private void setupFirebaseDataChange() {
         legoDataSource = new LegoFirebaseData();
         mySetDbRef = legoDataSource.open();
@@ -60,19 +67,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Defines the ListView and sets up item click listener for selection
+     */
     private void setupListView() {
         listViewSets = (ListView) findViewById(R.id.lvSets);
         listViewSets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapter, View parent,
                                     int position, long id) {
                 positionSelected = position;
-                Log.d("MAIN", "Lego Set selected at position " + positionSelected);
             }
         });
     }
 
+    /**
+     * Set up the button to add a new set using a seperate activity
+     */
     private void setupAddButton() {
-        // Set up the button to add a new set using a seperate activity
         btnAdd = (Button) findViewById(R.id.btnAddSet);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -84,12 +95,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Set up the button to display details on one set using a seperate activity
+     */
     private void setupDetailButton() {
-        // Set up the button to display details on one fish using a seperate activity
         btnSetDetail = (Button) findViewById(R.id.btnSetDetail);
         btnSetDetail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Log.d("MAIN", "onClick for Details");
+                // Start up the set detail activity with an intent
                 Intent detailActIntent = new Intent(view.getContext(), LegoSetDetail.class);
                 detailActIntent.putExtra("Set", setList.get(positionSelected));
                 finish();
@@ -98,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Set up the button to delete a set from the database and list
+     */
     private void setupDeleteButton() {
-        // Set up the button to display details on one fish using a seperate activity
         btnDelete = (Button) findViewById(R.id.btnDelete);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d("MAIN", "onClick for Delete");
-                Log.d("MAIN", "Delete at position " + positionSelected);
                 legoDataSource.deleteSet(setList.get(positionSelected));
                 legoSetAdapter.remove( setList.get(positionSelected) );
                 legoSetAdapter.notifyDataSetChanged();

@@ -1,5 +1,10 @@
 package edu.css.mylegosets;
 
+/**
+ * Lego set class
+ *
+ * @author Jon Bernhardt
+ */
 
 import java.io.Serializable;
 
@@ -12,11 +17,13 @@ public class LegoSet implements Serializable {
     private String numPieces;
     private String imgUrl;
     private String numMiniFigs;
-
     public LegoSet () {
 
     }
 
+    /**
+     * builds a set with a key for the database
+     */
     public LegoSet (String key, String setNumber, String setName, String theme, String numPieces, String imgUrl, String numMiniFigs) {
         this.key = key;
         this.setNumber = setNumber;
@@ -27,7 +34,9 @@ public class LegoSet implements Serializable {
         this.numMiniFigs = numMiniFigs;
     }
 
-
+    /**
+     * builds a set without a key for the database
+     */
     public LegoSet (String setNumber, String setName, String theme, String numPieces, String imgUrl, String numMiniFigs) {
         this.setNumber = setNumber;
         this.setName = setName;

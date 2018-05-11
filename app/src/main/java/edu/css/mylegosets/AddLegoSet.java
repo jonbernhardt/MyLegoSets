@@ -21,6 +21,12 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+/**
+ * This searches for and displays the selected set to add in the add set activity
+ *
+ * @author Jon Bernhardt
+ */
+
 public class AddLegoSet extends AppCompatActivity {
 
     Button btnSave, btnGetSet, buttonBack;
@@ -47,13 +53,15 @@ public class AddLegoSet extends AppCompatActivity {
         legoDataSource = new LegoFirebaseData();
         legoDataSource.open();
 
-
-
-        // set up the button listener
+        /**
+         * set up the button listener for adding a set to the data base and returns to the main
+         * activity
+         */
+        //
         btnSave = (Button) findViewById(R.id.btnAddSet);
         btnSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Add the fish to the database
+                // Add the set to the database
                 String setNumber = tvSetNum.getText().toString();
                 String setName = tvSetName.getText().toString();
                 String setTheme = tvSetTheme.getText().toString();
@@ -67,7 +75,10 @@ public class AddLegoSet extends AppCompatActivity {
             }
         });
 
-        // set up the button listener
+        /**
+         * set up the button listener for the back button to return to the main activity
+         * without adding a set to the database
+         */
         buttonBack = (Button) findViewById(R.id.btnBack);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -76,44 +87,46 @@ public class AddLegoSet extends AppCompatActivity {
                 startActivity(mainActIntent);
             }
         });
-
     }
 
-    // add find button listener and code
-
-    //public void btnClick (View v) throws XmlPullParserException, ClientProtocolException, URISyntaxException, IOException {
+    /**
+     * set up the button listener to search for a lego set using the users input in search text box
+     */
     public void btnSearchClick (View v) throws XmlPullParserException, URISyntaxException, IOException {
-
-
         new AsyncDownloadXML().execute(this);
-
-
     }
+
+    /**
+     *  assigns the TextView text to display the results of the API query call
+     */
     public void setSetNumber(String newNum) {
         tvSetNum.setText(newNum);
     }
-
     public void setSetName(String newName) {
         tvSetName.setText(newName);
     }
-
     public void setSetTheme(String newTheme) {
         tvSetTheme.setText(newTheme);
     }
     public void setSetPieces(String newPieces) {
         tvSetPieces.setText(newPieces);
     }
-
     public void setSetFigs(String newFigs) {
             tvSetFigs.setText(newFigs);
     }
 
+    /**
+     * assigns the ImageView to display the results of the API query call
+     * this utilizes a Picasso plug in to set the ImageView using a image URL
+     */
     public void setSetImg(String newImg) {
         imgURL = newImg;
         Picasso.get().load(imgURL).into(ivSetImg);
     }
 
-
+    /**
+     * creates a toast message to be displayed status of search
+     */
     public void setStatus(String newStatus) {
         Toast toast=Toast.makeText(getApplicationContext(), newStatus, Toast.LENGTH_LONG );
         toast.show();
